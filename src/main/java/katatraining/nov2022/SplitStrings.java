@@ -1,4 +1,4 @@
-package katatraining;
+package katatraining.nov2022;
 
 public class SplitStrings {
     public static String[] solution(String s) {

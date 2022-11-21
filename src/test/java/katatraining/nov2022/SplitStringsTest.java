@@ -1,5 +1,6 @@
-package katatraining;
+package katatraining.nov2022;
 
+import katatraining.nov2022.SplitStrings;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
