@@ -12,15 +12,13 @@ public class EnoughIsEnough {
         }
         Map<Integer, Integer> occurrences = new HashMap<>();
         List<Integer> filteredOccurrences = new ArrayList<>();
-        for (int i = 0; i < elements.length; i++) {
-            if (occurrences.containsKey(elements[i]) && occurrences.get(elements[i]) >= maxOccurrences) {
-                continue;
-            } else if (occurrences.containsKey(elements[i]) && occurrences.get(elements[i]) < maxOccurrences) {
-                occurrences.put(elements[i], occurrences.get(elements[i]) + 1);
-                filteredOccurrences.add(elements[i]);
-            } else {
-                occurrences.put(elements[i], 1);
-                filteredOccurrences.add(elements[i]);
+        for (final int element : elements) {
+            if (occurrences.containsKey(element) && occurrences.get(element) < maxOccurrences) {
+                occurrences.put(element, occurrences.get(element) + 1);
+                filteredOccurrences.add(element);
+            } else if (!occurrences.containsKey(element)) {
+                occurrences.put(element, 1);
+                filteredOccurrences.add(element);
             }
         }
         return filteredOccurrences.stream().mapToInt(Integer::intValue).toArray();
